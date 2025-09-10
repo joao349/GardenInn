@@ -17,6 +17,15 @@ body {
   height: 100vh;
 }
 
+.container2 {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  position: relative;
+  width: 250px;
+  height: 75vh;
+}
+
 .ImagemPagInicial {
   width: 100%;
   height: auto;
@@ -37,10 +46,9 @@ body {
 }
 
 .logoBranca {
+  top:0;
   position: absolute;
-  top: -50px;    /* ajuste a posição vertical */
-  left: 630px;   /* ajuste a posição horizontal */
-  width: 150px; /* ajuste o tamanho */
+  width: 100%;
   z-index: 10;  /* valor maior para ficar em cima */
 }
 
