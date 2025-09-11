@@ -1,74 +1,193 @@
-body {
-  background-color: rgb(0,0,0);
-}
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.container {
-  display: flex; /* display: flex; transforma o elemento em um contêiner flexível para alinhar e distribuir seus filhos facilmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente */
-  position: relative;  /*mantém o elemento no fluxo normal e permite deslocá-lo relativo à sua posição original */
-  width: 100%; /* ocupa toda a largura da tela */
-  height: 100vh;/* height: 100vh; define a altura do elemento igual à altura total da janela de visualização */
-}
+    body, html {
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      background-color: #f5f5f5;
+    }
 
-.ImagemPagInicial {
-  width: 100%; /* ocupa toda a largura da tela */
-  height: auto;  /*faz com que a altura do elemento seja ajustada automaticamente para manter a proporção*/
-  display: block; /*faz o elemento ocupar toda a largura disponível, iniciando em uma nova linha */
-  filter: brightness(0.5); /*transforma o elemento em um contêiner flexível para alinhar e distribuir seus filhos facilmente */
-  flex: 1 1 600px;
-    /* 
-    flex: 1 1 100px;
-    - flex-grow: 1;    /* permite que o item cresça para ocupar espaço extra 
-    - flex-shrink: 1;  /* permite que o item encolha se necessário 
-    - flex-basis: 100px; /* tamanho inicial do item antes de crescer ou encolher 
-    Resumo: o item começa com 100px, mas pode crescer ou encolher conforme o espaço disponível.
-  */
-}
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
 
-.logoBrancaContainer {
-  display: flex; /* display: flex; transforma o elemento em um contêiner flexível para alinhar e distribuir seus filhos facilmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  position: relative;  /*Permite oque use  */
-  width: 100%; /* ocupa toda a largura da tela */
-  height: 100vh;/* height: 100vh; define a altura do elemento igual à altura total da janela de visualização */
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
 
-.ImagemDaLogo {
-  position: ;
-  top: 0;
-}
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      text-transform: lowercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #4CAF50;
+    }
+
+    /* Logo */
+    .logo {
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #4CAF50;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .logo span {
+      font-weight: 900;
+    }
+
+    /* Search and icons container */
+    .search-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search-icons input[type="search"] {
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      outline: none;
+      width: 150px;
+      transition: width 0.3s;
+    }
 
 
+    .search-icons input[type="search"]:focus {
+      width: 200px;
+      border-color: #4CAF50;
+    }
 
-.navbar {
-  position: fixed;   /* fixa o nav na tela */
-  top: 0;            /* posiciona no topo */
-  left: 0;           /* alinha à esquerda */
-  width: 100%;       /* ocupa toda a largura da tela */
-  background-color: #333; /* cor de fundo (exemplo) */
-  color: white;      /* cor do texto */
-  padding: 1rem;     /* espaçamento interno */
-  z-index: 1000;     /* garante que fique acima de outros elementos */
-}
+    /* Icons simple placeholders */
+    .icon {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: #333;
+      transition: color 0.3s;
+    }
 
-html, body {
-  height: 100%; /* height: 100%; faz o elemento ter a mesma altura que o seu elemento pai */
-  margin: 0; /*remove todas as margens externas do elemento */
-  padding: 0; /*remove todo o espaço interno entre o conteúdo e a borda do elemento */
-}
+    .icon:hover {
+      color: #4CAF50;
+    }
 
-body {
-  height: 100vh; /* 100% da altura da viewport */
-}
+    /* Hamburger menu - mock */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
 
-p {
-  font-family: ;
-  font-size: larger;
-  margin-top: -35vh;
-  margin-left: 380px;
-  width: 700px;
-  position: absolute;
-  z-index: 10; /* valor maior para ficar em cima de outros elementos*/
-  color: aliceblue;
-}
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+    }
+
+    /* Hero section */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      background: url('ImagemJardimVertical.png');
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      user-select: none;
+    }
+
+    /* Overlay para destacar o texto */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      margin-top: -10vh;
+      font-family: 'Georgia', serif;
+      font-size: 4rem;
+      margin-bottom: 0.2rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .hero-content button {
+      font-size: 1rem;
+      padding: 0.8rem 2rem;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(76,175,80,0.4);
+    }
+
+    .hero-content button:hover {
+      background-color: #388E3C;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }

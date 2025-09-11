@@ -1,0 +1,193 @@
+
+  /* Reset simples */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #8cbf66; /* Verde claro de fundo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  }
+    nav {
+      width: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      text-transform: lowercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #4CAF50;
+    }
+
+    /* Logo */
+    .logo {
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #4CAF50;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .logo span {
+      font-weight: 900;
+    }
+
+    /* Search and icons container */
+    .search-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search-icons input[type="search"] {
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      outline: none;
+      width: 150px;
+      transition: width 0.3s;
+    }
+
+
+    .search-icons input[type="search"]:focus {
+      width: 200px;
+      border-color: #4CAF50;
+    }
+
+    /* Icons simple placeholders */
+    .icon {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    .icon:hover {
+      color: #4CAF50;
+    }
+
+    /* Hamburger menu - mock */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+    }
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .login-box {
+    background-color: #4a6c1b; /* Verde escuro */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.2);
+    width: 100%;
+    max-width: 360px;
+    color: white;
+    text-align: center;
+  }
+  .login-box h1 {
+    font-family: "Georgia", serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .login-box p {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  label {
+    display: none; /* Oculto, mas pode ser ativado para acessibilidade */
+  }
+  input[type="email"],
+  input[type="password"] {
+    padding: 12px 15px;
+    border-radius: 7px;
+    border: none;
+    font-size: 1rem;
+  }
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    outline: 2px solid #9eca3c;
+  }
+  button[type="submit"] {
+    background-color: #fff;
+    color: #4a6c1b;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background-color: #9eca3c;
+    color: #2d3e07;
+  }
+  .signup-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #d5dfaf;
+  }
+  .signup-text a {
+    color: #e5eba4;
+    text-decoration: none;
+  }
+  .signup-text a:hover {
+    text-decoration: underline;
+  }
