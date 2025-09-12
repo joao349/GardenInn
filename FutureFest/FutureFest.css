@@ -11,89 +11,59 @@
     }
 
     /* Navbar */
-    nav {
-      width: 100%;
-      background: white;
+      .navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: fixed;
-      top: 0;
-      z-index: 10;
+      align-items: center;
+      padding: 0 20px;
+      height: 60px;
+      background-color: #eee;
     }
 
-    nav ul {
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      margin-right: 20px;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    .nav-links {
       list-style: none;
       display: flex;
-      gap: 2rem;
-      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    /* Logo */
+    .nav-links li {
+      margin-right: 15px;
     }
 
-    nav ul li a {
+    .nav-links li a {
       text-decoration: none;
       color: #333;
-      font-weight: 500;
-      text-transform: lowercase;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: color 0.3s;
     }
-
-    nav ul li a:hover {
-      color: #4CAF50;
-    }
-
-    /* Logo */
-    .logo {
-      font-family: 'Georgia', serif;
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #4CAF50;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .logo span {
-      font-weight: 900;
-    }
-
     /* Search and icons container */
-    .search-icons {
+    .navbar-right input[type="text"] {
+      padding: 5px 10px;
+      font-size: 1em;
+    }
+    .navbar-right{
       display: flex;
       align-items: center;
-      gap: 1rem;
     }
 
-    .search-icons input[type="search"] {
-      padding: 0.3rem 0.6rem;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-      font-size: 0.9rem;
-      outline: none;
-      width: 150px;
-      transition: width 0.3s;
+    .search-icons{
+      display: flex;
     }
 
 
     .search-icons input[type="search"]:focus {
       width: 200px;
       border-color: #4CAF50;
-    }
-
-    /* Icons simple placeholders */
-    .icon {
-      cursor: pointer;
-      font-size: 1.3rem;
-      color: #333;
-      transition: color 0.3s;
-    }
-
-    .icon:hover {
-      color: #4CAF50;
     }
 
     /* Hamburger menu - mock */
