@@ -1,0 +1,53 @@
+2)
+db.DESTINOS.insertOne({
+ _id: 1,
+ Destino: "Paris",
+ Pais:"França",
+ AtraçãoPrincipal:"Torre Eiffel",
+ CustoMedio:"150",
+ Avaliação:4.8,
+});
+
+3)
+db.PACOTES.insertOne({ 
+ _id: 1,
+ NomeDoPacote:"Aventura na Amazônia",
+ DuraçãoDias:7,
+ Clusão:"Transporte",
+});
+
+4)
+db.AVALIACOES.insertOne({
+ _id: 1,
+ Destino:"Tóquio"
+ Avaliação:5,
+ Comentario:"Incrível experiência cultural!",
+});
+
+5)
+db.CLIENTES.insertOne({
+_id:1,
+Nome:"João Silva",
+Email:"joao.silva@example.com"
+DestinoInterece:"Nova York"
+});
+
+6)
+db.RESERVAS.insertOne({
+_id:1,
+ClienteNome:"Maria Santos",
+Destino:"Bali",
+dataPartida: new Date("2024-07-15"),
+dataRetorno: new Date("2024-07-25"),
+});
+
+7)
+
+db.DESTINOS.updateOne(
+ { _id: 1 },
+ { $set: { CustoMedio: 1.1 } }
+);
+
+8) Atualize a avaliação média de um destino existente para 4.9.
+
+
