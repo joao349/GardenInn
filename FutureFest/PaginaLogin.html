@@ -41,28 +41,18 @@
     <main class="main-content">
         <div class="login-card">
             <div class="logo">
-                <link rel="stylesheet" href="">
-            </div> <!-- Replace with actual logo SVG/image -->
+                <!-- Replace with actual logo SVG/image -->
+            </div>
             <h2>Please log in to continue</h2>
             <form class="login-form">
                 <input type="email" placeholder="Email" required>
                 <input type="password" placeholder="Password" required>
                 <button type="submit" class="login-btn">Log in</button>
             </form>
-            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+            <p class="signup-link">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign up</a></p> <!-- Alterado aqui -->
         </div>
     </main>
         
-    <!-- Modal para colocar os dados do usuario que não possui login-->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </button>
-
-    <!-- Modal -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: 10px;">
-        Launch demo modal
-    </button>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -93,11 +83,12 @@
         </div>
     </div>
 
-    <script>
+    <!-- Script removido, pois não é mais necessário para este link -->
+    <!-- <script>
        document.querySelector('.btn-primary').addEventListener('click', function() {
            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
            myModal.show();
        });
-   </script>
+   </script> -->
 </body>
 </html>
