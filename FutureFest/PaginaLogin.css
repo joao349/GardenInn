@@ -34,6 +34,11 @@ body {
     text-decoration: underline;
 }
 
+.btn.btn-primary {
+    position: relative; /* ou absolute, dependendo do layout */
+    z-index: 1000; /* Para garantir que fique no topo */
+}
+
 .header-right {
     display: flex;
     gap: 10px;
