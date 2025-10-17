@@ -24,3 +24,7 @@ app.get('registro', (req,res) => {
 app.post('/registro', async (res,req)=>{
     
 });
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
