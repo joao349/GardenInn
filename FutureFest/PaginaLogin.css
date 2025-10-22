@@ -102,7 +102,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 40px 40px; /* Aumentado o padding lateral de 20px para 40px para tornar o main content mais largo */
 }
 
 .login-card {
@@ -112,24 +112,19 @@ body {
     border-radius: 8px;
     text-align: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 800px; /* Aumentado de 600px para 800px para tornar o cartão de login ainda mais largo */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Para o logotipo no navbar */
 .logo img {
-    height: 50px;  /* Define a altura como 10 pixels */
+    height: 50px;  /* Define a altura como 50 pixels */
     width: auto;   /* Mantém a proporção da largura */
     vertical-align: middle; /* Alinha verticalmente se necessário */
 }
-/* Para o logotipo no cartão de login (se você quiser uma imagem lá) */
-.login-card .logo {
-    height: 10px;  /* Define a altura do contêiner */
-    font-size: 10px; /* Se for texto, ajusta o tamanho */
-}
-/* Se você adicionar uma imagem no cartão de login, faça assim: */
+/* Para o logotipo no cartão de login - AUMENTADO PARA NÃO SER PEQUENO */
 .login-card .logo img {
-    height: 10px;
+    height: 60px;  /* Aumentado de 10px para 60px para torná-la visível e proporcional */
     width: auto;
 }
 
@@ -153,15 +148,15 @@ body {
     padding: 12px;
     border: 1px solid #333333;
     border-radius: 4px;
-    background-color:solid #333333;
-    color: #222222;
+    background-color: #333333;
+    color: #ffffff;  /* Corrigido para branco para visibilidade em fundo escuro */
     font-size: 16px;
     outline: none;
 }
 
 .login-btn {
-    background-color:rgb(255, 255, 255);
-    color:rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border: 1px solid #ffffff;
     padding: 12px;
     border-radius: 4px;
@@ -181,7 +176,7 @@ body {
 }
 
 .signup-link a {
-    color:#00ff26;
+    color: #00ff26;
     text-decoration: none;
 }
 
@@ -242,18 +237,10 @@ body {
     }
     /* Search and icons container */
 
-
     .search-icons{
       display: flex;
     }
 
-
-    .search-icons input[type="search"]:focus {
-      width: 200px;
-      border-color: #4CAF50;
-    }
-
-    
     .search-icons input[type="search"]:focus {
       width: 200px;
       border-color: #4CAF50;
@@ -272,4 +259,3 @@ body {
       height: 3px;
       background-color: #333;
     }
-
