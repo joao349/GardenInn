@@ -43,52 +43,76 @@
             <div class="logo">
                 <!-- Replace with actual logo SVG/image -->
             </div>
-            <h2>Please log in to continue</h2>
+            <h2>Faça o log-in para continuar</h2>
             <form class="login-form">
                 <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Senha" required>
                 <button type="submit" class="login-btn">Log in</button>
             </form>
-            <p class="signup-link">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign up</a></p> <!-- Alterado aqui -->
+            <p class="signup-link">Não possui uma conta? <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign up</a></p> <!-- Alterado aqui -->
         </div>
     </main>
-        
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Crie sua conta</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="Primeiro nome">
-                        <input type="text" name="" id="">
-                    </div>
-                    <div class="Segundo nome">
-                        <input type="text" name="" id="">
-                    </div>
-                    <div class="E-mail">
-                        <input type="text" name="" id="">
-                    </div>
-                    <div class="Telefone">
-                        <input type="text" name="" id="">
-                    </div>
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">Primeiro nome</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Digite seu primeiro nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Segundo nome</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Digite seu segundo nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Digite seu telefone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="password" placeholder="Digite uma senha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirme a senha</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha" required>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" form="signupForm" class="btn btn-primary">Criar conta</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Script removido, pois não é mais necessário para este link -->
-    <!-- <script>
-       document.querySelector('.btn-primary').addEventListener('click', function() {
-           var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-           myModal.show();
-       });
-   </script> -->
+    <!-- Script para validação básica -->
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem. Tente novamente.');
+                return;
+            }
+            // Aqui você pode adicionar lógica para enviar os dados para o servidor
+            alert('Conta criada com sucesso!');
+            // Fechar o modal após sucesso
+            var myModal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+            myModal.hide();
+        });
+    </script>
 </body>
 </html>
