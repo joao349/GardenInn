@@ -45,7 +45,7 @@
                 <!-- Replace with actual logo SVG/image -->
             </div>
             <h2>Faça o log-in para continuar</h2>
-            <form class="login-form">
+            <form action="/Login" method="post" class="login-form">
                 <input type="email" placeholder="Email" required>
                 <input type="password" placeholder="Senha" required>
                 <button type="submit" class="login-btn">Log in</button>
@@ -63,7 +63,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="signupForm">
+                    <form action="/InserirUsuario" method="post" id="signupForm">
                         <div class="mb-3">
                             <label for="firstName" class="form-label">Primeiro nome</label>
                             <input type="text" class="form-control" id="firstName" placeholder="Digite seu primeiro nome" required>
