@@ -126,9 +126,9 @@
             GoogleGenerativeAI, // Classe para interagir com o Google Generative AI
             HarmCategory,       // Enum para categorias de conteúdo prejudicial
             HarmBlockThreshold  // Enum para os níveis de bloqueio de conteúdo prejudicial
-        } from "@google/generative-ai";
+        } from "https://esm.sh/@google/generative-ai";
 
-        const MODEL_NAME = "gemini-pro";
+        const MODEL_NAME = "gemini-1.5-pro";
         const API_KEY = "AIzaSyCrIMv-WrvE_6XkWVNKzOXzJEJxlNEHiKo"
 
         // Configuração de geração para o modelo, ajustando parâmetros como temperatura e tokens de saída
@@ -161,6 +161,7 @@
 
         async function initChat() {
             try {
+                console.log('Initializing chat with model:', MODEL_NAME);
                 // Cria uma instância da classe GoogleGenerativeAI com a chave da API
                 const genAI = new GoogleGenerativeAI(API_KEY);
 
@@ -175,6 +176,7 @@
                     safetySettings: SAFETY_SETTINGS,
                     history: [], // Inicializa o histórico do chat como vazio
                 });
+                console.log('Chat initialized successfully');
                 return chat;
             } catch (error) {
                 console.error('Erro ao inicializar chat:', error.message);
@@ -187,13 +189,21 @@
 
         // AI response logic
         async function getBotResponse(message) {
+            if (!chat) {
+                console.error('Chat not initialized');
+                return "Chat not initialized.";
+            }
             try {
+                console.log('Sending message to AI:', message);
                 const result = await chat.sendMessage(message);
+                console.log('AI result:', result);
                 if (result.error) {
                     console.error('AI Error:', result.error.message);
                     return "Sorry, I encountered an error.";
                 }
-                return result.response.text();
+                const responseText = await result.response.text();
+                console.log('AI response text:', responseText);
+                return responseText;
             } catch (error) {
                 console.error('Error getting response:', error.message);
                 return "Sorry, I couldn't process that.";
@@ -249,6 +259,11 @@
         });
         // Initial render
         renderTabs();
+
+        // Make functions global for onclick
+        window.sendMessage = sendMessage;
+        window.addChat = addChat;
+        window.switchChat = switchChat;
     </script>
 </body>
 </html>
