@@ -44,6 +44,11 @@
             padding: 20px;
             overflow-y: auto;
             background: #f9f9f9;
+            scroll-behavior: smooth;
+        }
+        .loading-container {
+            padding: 0 20px 10px;
+            background: #f9f9f9;
         }
         .message {
             margin-bottom: 15px;
@@ -114,7 +119,6 @@
         <div class="chat-area">
             <div class="chat-messages" id="chat-messages">
                 <div class="message bot-message">Olá, como posso te ajudar?</div>
-                <div class="loading" id="loading">Pensando...</div>
             </div>
             <div class="chat-input">
                 <input type="text" id="user-input" placeholder="Type your message...">
@@ -245,8 +249,14 @@
                 msgDiv.textContent = msg.text;
                 chatMessages.appendChild(msgDiv);
             });
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            // Always append loading div
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'loading';
+            loadingDiv.id = 'loading';
+            loadingDiv.textContent = 'Pensando...';
+            chatMessages.appendChild(loadingDiv);
+            // Scroll to bottom smoothly
+            chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
         }
         async function sendMessage() {
             const message = userInput.value.trim();
@@ -259,7 +269,7 @@
             // Show loading indicator
             const loadingDiv = document.getElementById('loading');
             loadingDiv.style.display = 'block';
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            chatMessages.scrollTo({ top: chatMessages.scrollHeight, behavior: 'smooth' });
 
             const botReply = await getBotResponse(message);
 
