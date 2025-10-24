@@ -97,10 +97,50 @@ app.post('/InserirUsuario', async (res,req)=>{
     }
 });
 
-
-
-
-
 app.listen(port, () => {
  console.log(`Servidor Node.js em execução em http://localhost:${port}`);
  });
+
+//IA abaixo 
+
+import {
+    GoogleGenerativeAI, // Classe para interagir com o Google Generative AI
+    HarmCategory,       // Enum para categorias de conteúdo prejudicial
+    HarmBlockThreshold  // Enum para os níveis de bloqueio de conteúdo prejudicial
+} from "@google/generative-ai";
+
+import chalk from "chalk";
+import ora from "ora";
+import prompt from 'prompt-sync';
+
+const promptSync = prompt();
+const MODEL_NAME = "gemini-1.0-pro";
+const API_KEY = "AIzaSyCrIMv-WrvE_6XkWVNKzOXzJEJxlNEHiKo"
+
+// Configuração de geração para o modelo, ajustando parâmetros como temperatura e tokens de saída
+const GENERATION_CONFIG = {
+    temperature: 1, //Define o quão criativa é a resposta da IA, de 0 a 1
+    topK: 1, // Controla o número de palavras candidatas consideradas durante a geração
+    topP: 1, // Controla a probabilidade cumulativa das palavras candidatas consideradas
+    maxOutputTokens: 2048, // Define o número máximo de tokens (palavras) na resposta gerada
+};
+
+// Configuração de segurança para filtrar conteúdo prejudicial com diferentes categorias e limiares
+const SAFETY_SETTINGS = [
+    {
+        category: HarmCategory.HARM_CATEGORY_HARASSMENT, // Categoria de conteúdo prejudicial: assédio
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE // Limitar para bloquear conteúdo com médio nível de gravidade e acima
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, // Categoria de conteúdo prejudicial: discurso de ódio
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE // Limitar para bloquear conteúdo com médio nível de gravidade e acima
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, // Categoria de conteúdo prejudicial: conteúdo sexual explícito
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE // Limitar para bloquear conteúdo com médio nível de gravidade e acima
+    },
+    {
+        category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, // Categoria de conteúdo prejudicial: conteúdo perigoso
+        threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE // Limitar para bloquear conteúdo com médio nível de gravidade e acima
+    },
+];
