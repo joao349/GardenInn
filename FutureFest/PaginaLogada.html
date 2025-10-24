@@ -106,7 +106,7 @@
         </div>
         <div class="chat-area">
             <div class="chat-messages" id="chat-messages">
-                <div class="message bot-message">Hello! How can I help you today?</div>
+                <div class="message bot-message">Olá, como posso te ajudar?</div>
             </div>
             <div class="chat-input">
                 <input type="text" id="user-input" placeholder="Type your message...">
@@ -116,7 +116,7 @@
     </div>
 
     <script type="module">
-        let chats = [{ id: 1, messages: [{ text: "Hello! How can I help you today?", sender: "bot" }] }];
+        let chats = [{ id: 1, messages: [{ text: "Olá, como posso te ajudar?", sender: "bot" }] }];
         let currentChatId = 1;
         const chatMessages = document.getElementById('chat-messages');
         const userInput = document.getElementById('user-input');
@@ -128,7 +128,7 @@
             HarmBlockThreshold  // Enum para os níveis de bloqueio de conteúdo prejudicial
         } from "@google/generative-ai";
 
-        const MODEL_NAME = "gemini-1.5-flash";
+        const MODEL_NAME = "gemini-1.5-pro";
         const API_KEY = "AIzaSyCrIMv-WrvE_6XkWVNKzOXzJEJxlNEHiKo"
 
         const GENERATION_CONFIG = {
