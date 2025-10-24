@@ -116,6 +116,7 @@
     </div>
 
     <script>
+
         let chats = [{ id: 1, messages: [{ text: "Hello! How can I help you today?", sender: "bot" }] }];
         let currentChatId = 1;
         const chatMessages = document.getElementById('chat-messages');
@@ -227,6 +228,28 @@
         // Chama a função runChat para iniciar o chat
         runChat();
         
+        // Basic response logic (expand with AI API)
+        function getBotResponse(message) {
+            const responses = {
+                "hello": "Hi there!",
+                "how are you": "I'm doing well, thank you!",
+                "bye": "Goodbye!",
+                "default": "I'm sorry, I didn't understand that."
+            };
+            const lowerMsg = message.toLowerCase();
+            return responses[lowerMsg] || responses["default"];
+        }
+        function renderTabs() {
+            tabsContainer.innerHTML = '<button class="add-tab" onclick="addChat()">+ New Chat</button>';
+            chats.forEach(chat => {
+                const tab = document.createElement('div');
+                tab.className = `tab ${chat.id === currentChatId ? 'active' : ''}`;
+                tab.textContent = `Chat ${chat.id}`;
+                tab.onclick = () => switchChat(chat.id);
+                tabsContainer.insertBefore(tab, tabsContainer.lastElementChild);
+            });
+        }
+
     </script>
 </body>
 </html>
