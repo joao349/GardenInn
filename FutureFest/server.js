@@ -97,10 +97,6 @@ app.post('/InserirUsuario', async (res,req)=>{
     }
 });
 
-app.listen(port, () => {
- console.log(`Servidor Node.js em execução em http://localhost:${port}`);
- });
-
 //IA abaixo 
 
 import {
@@ -207,3 +203,7 @@ async function runChat() {
 
 // Chama a função runChat para iniciar o chat
 runChat();
+
+app.listen(port, () => {
+ console.log(`Servidor Node.js em execução em http://localhost:${port}`);
+ });

@@ -3,10 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RotaProtegida</title>
+    <title>Full-Screen AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .chat-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #f4f4f4;
+        }
+        .tabs {
+            display: flex;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background: #0056b3;
+        }
+        .chat-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .user-message {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .bot-message {
+            background: #e9ecef;
+            color: black;
+        }
+        .chat-input {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            background: white;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .chat-input button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background: #0056b3;
+        }
+        .add-tab {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: auto;
+        }
+        .add-tab:hover {
+            background: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem-vindo!</h1>
-    <p>Você acessou uma rota protegida com sucesso</p>
+    <div class="chat-container">
+        <div class="tabs">
+            <button class="add-tab" onclick="addChat()">+ New Chat</button>
+        </div>
+        <div class="chat-area">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">Hello! How can I help you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let chats = [{ id: 1, messages: [{ text: "Hello! How can I help you today?", sender: "bot" }] }];
+        let currentChatId = 1;
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const tabsContainer = document.querySelector('.tabs');
+
+        // Basic response logic (expand with AI API)
+        function getBotResponse(message) {
+            const responses = {
+                "hello": "Hi there!",
+                "how are you": "I'm doing well, thank you!",
+                "bye": "Goodbye!",
+                "default": "I'm sorry, I didn't understand that."
+            };
+            const lowerMsg = message.toLowerCase();
+            return responses[lowerMsg] || responses["default"];
+        }
+
+        function renderTabs() {
+            tabsContainer.innerHTML = '<button class="add-tab" onclick="addChat()">+ New Chat</button>';
+            chats.forEach(chat => {
+                const tab = document.createElement('div');
+                tab.className = `tab ${chat.id === currentChatId ? 'active' : ''}`;
+                tab.textContent = `Chat ${chat.id}`;
+                tab.onclick = () => switchChat(chat.id);
+                tabsContainer.insertBefore(tab, tabsContainer.lastElementChild);
+            });
+        }
+
+        function switchChat(chatId) {
+            currentChatId = chatId;
+            renderTabs();
+            renderMessages();
+        }
+
+        function addChat() {
+            const newId = chats.length + 1;
+            chats.push({ id: newId, messages: [{ text: "Hello! How can I help you today?", sender: "bot" }] });
+            switchChat(newId);
+        }
+
+        function renderMessages() {
+            const currentChat = chats.find(chat => chat.id === currentChatId);
+            chatMessages.innerHTML = '';
+            currentChat.messages.forEach(msg => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `message ${msg.sender}-message`;
+                msgDiv.textContent = msg.text;
+                chatMessages.appendChild(msgDiv);
+            });
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+
+            const currentChat = chats.find(chat => chat.id === currentChatId);
+            currentChat.messages.push({ text: message, sender: "user" });
+            renderMessages();
+            userInput.value = '';
+
+            setTimeout(() => {
+                const botReply = getBotResponse(message);
+                currentChat.messages.push({ text: botReply, sender: "bot" });
+                renderMessages();
+            }, 500);
+        }
+
+        // Allow Enter key to send
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initial render
+        renderTabs();
+    </script>
 </body>
 </html>
