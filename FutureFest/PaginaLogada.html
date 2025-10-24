@@ -61,6 +61,13 @@
             background: #e9ecef;
             color: black;
         }
+        .loading {
+            display: none;
+            font-style: italic;
+            color: #666;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
         .chat-input {
             display: flex;
             padding: 20px;
@@ -107,6 +114,7 @@
         <div class="chat-area">
             <div class="chat-messages" id="chat-messages">
                 <div class="message bot-message">Olá, como posso te ajudar?</div>
+                <div class="loading" id="loading">Pensando...</div>
             </div>
             <div class="chat-input">
                 <input type="text" id="user-input" placeholder="Type your message...">
@@ -237,6 +245,7 @@
                 msgDiv.textContent = msg.text;
                 chatMessages.appendChild(msgDiv);
             });
+            // Scroll to bottom
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
         async function sendMessage() {
@@ -246,7 +255,17 @@
             currentChat.messages.push({ text: message, sender: "user" });
             renderMessages();
             userInput.value = '';
+
+            // Show loading indicator
+            const loadingDiv = document.getElementById('loading');
+            loadingDiv.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
             const botReply = await getBotResponse(message);
+
+            // Hide loading indicator
+            loadingDiv.style.display = 'none';
+
             currentChat.messages.push({ text: botReply, sender: "bot" });
             renderMessages();
         }
