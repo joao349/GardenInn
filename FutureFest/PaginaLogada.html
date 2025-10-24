@@ -116,7 +116,6 @@
     </div>
 
     <script>
-
         let chats = [{ id: 1, messages: [{ text: "Hello! How can I help you today?", sender: "bot" }] }];
         let currentChatId = 1;
         const chatMessages = document.getElementById('chat-messages');
@@ -227,7 +226,7 @@
 
         // Chama a função runChat para iniciar o chat
         runChat();
-        
+
         // Basic response logic (expand with AI API)
         function getBotResponse(message) {
             const responses = {
@@ -249,7 +248,48 @@
                 tabsContainer.insertBefore(tab, tabsContainer.lastElementChild);
             });
         }
-
+        function switchChat(chatId) {
+            currentChatId = chatId;
+            renderTabs();
+            renderMessages();
+        }
+        function addChat() {
+            const newId = chats.length + 1;
+            chats.push({ id: newId, messages: [{ text: "Hello! How can I help you today?", sender: "bot" }] });
+            switchChat(newId);
+        }
+        function renderMessages() {
+            const currentChat = chats.find(chat => chat.id === currentChatId);
+            chatMessages.innerHTML = '';
+            currentChat.messages.forEach(msg => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `message ${msg.sender}-message`;
+                msgDiv.textContent = msg.text;
+                chatMessages.appendChild(msgDiv);
+            });
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+            const currentChat = chats.find(chat => chat.id === currentChatId);
+            currentChat.messages.push({ text: message, sender: "user" });
+            renderMessages();
+            userInput.value = '';
+            setTimeout(() => {
+                const botReply = getBotResponse(message);
+                currentChat.messages.push({ text: botReply, sender: "bot" });
+                renderMessages();
+            }, 500);
+        }
+        // Allow Enter key to send
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        // Initial render
+        renderTabs();
     </script>
 </body>
 </html>
