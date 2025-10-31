@@ -1,163 +1,74 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body, html {
-      font-family: 'Arial', sans-serif;
-      height: 100%;
-      background-color: #f5f5f5;
-    }
+body, html {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  background-color: #f5f5f5;
+}
 
-    /* Navbar */
-      .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      height: 60px;
-      background-color: #eee;
-    }
+.degrade {
+  position: absolute;
+  z-index: 1;
+  height:100%;
+  width: 83.6%;
 
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
+}
+/* Hero section */
+body {
+  font-family: system-ui, sans-serif;
+  background-color:black;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-    .logo {
-      margin-right: 20px;
-      font-weight: bold;
-      font-size: 1.5em;
-    }
+.hero{
+  position: absolute;
+  z-index: 1000;
+};
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    /* Logo */
-    .nav-links li {
-      margin-right: 15px;
-    }
+.logo {
+  width: 318px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-    .nav-links li a {
-      text-decoration: none;
-      color: #333;
-    }
-    /* Search and icons container */
-    .navbar-right input[type="text"] {
-      padding: 5px 10px;
-      font-size: 1em;
-    }
-    .navbar-right{
-      display: flex;
-      align-items: center;
-    }
+h1 {
+  font-size: 3vw;
+  margin-bottom: 10px;
+}
 
-    .search-icons{
-      display: flex;
-    }
+.imagem_inicial {
+  height: 100%;
+}
 
+p {
+  font-size: 2vw;
+  margin-bottom: 20px;
+  margin-left: 100px;
+   margin-right: 100px;
+}
 
-    .search-icons input[type="search"]:focus {
-      width: 200px;
-      border-color: #4CAF50;
-    }
+button {
+  padding: 12px 25px;
+  font-size: 1.2vw;
+  background-color: rgb(0, 255, 38);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-    /* Hamburger menu - mock */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-    }
-
-    /* Hero section */
-    .hero {
-      height: 100vh;
-      width: 100%;
-      background: url('ImagemJardimVertical.png');
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 0 20px;
-      user-select: none;
-    }
-
-    /* Overlay para destacar o texto */
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
-    }
-
-    .hero-content h1 {
-      margin-top: -10vh;
-      font-family: 'Georgia', serif;
-      font-size: 4rem;
-      margin-bottom: 0.2rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-    }
-
-    .hero-content p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-      font-weight: 400;
-    }
-
-    .hero-content button {
-      font-size: 1rem;
-      padding: 0.8rem 2rem;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-weight: 600;
-      box-shadow: 0 4px 8px rgba(76,175,80,0.4);
-    }
-
-    .hero-content button:hover {
-      background-color: #388E3C;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero-content p {
-        font-size: 1rem;
-      }
-    }
+button:hover {
+  background-color: rgb(0, 255, 38);
+}

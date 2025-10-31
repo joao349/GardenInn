@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Liven Green - Sobre nós</title>
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+            color: #000;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav .menu-left, nav .menu-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav .menu-left a,
+        nav .menu-right button,
+        nav .menu-right input::placeholder {
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav .logo {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Icons na direita */
+        nav .menu-right {
+            gap: 15px;
+        }
+
+        nav .search-container {
+            position: relative;
+        }
+
+        nav input[type="search"] {
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            padding: 6px 36px 6px 15px;
+            font-size: 14px;
+            outline: none;
+            width: 150px;
+        }
+
+        nav button.search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Link voltar */
+        .voltar {
+            margin: 20px 30px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Conteúdo principal */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto 80px auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px 80px;
+            align-items: center;
+        }
+
+        /* Texto da esquerda / direita */
+        .content-text h2 {
+            color: #2e7d32; /* Verde escuro */
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+        }
+
+        .content-text p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #000;
+        }
+
+        /* Imagens com bordas arredondadas */
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 2px 20px rgb(90 92 105 / 0.1);
+        }
+
+        /* Ajuste espaçamento texto-imagem para os dois conteúdos */
+        .sobre-nos .content-text {
+            grid-column: 1 / 2;
+            order: 1;
+        }
+        .sobre-nos .content-image {
+            grid-column: 2 / 3;
+            order: 2;
+        }
+        .publico-alvo .content-text {
+            grid-column: 2 / 3;
+            order: 2;
+        }
+        .publico-alvo .content-image {
+            grid-column: 1 / 2;
+            order: 1;
+        }
+
+        /* Estilo para o ícone voltar (usar um símbolo Unicode) */
+        .voltar::before {
+            content: '◀';
+            font-size: 14px;
+        }
+
+        /* Ajustes para mobile */
+        @media(max-width: 700px) {
+            .container {
+                display: block;
+            }
+
+            .sobre-nos .content-text,
+            .sobre-nos .content-image,
+            .publico-alvo .content-text,
+            .publico-alvo .content-image {
+                grid-column: auto !important;
+                order: auto !important;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <div class="menu-left">
+            <a href="#">quem nós somos</a>
+            <a href="#">Nossa missão</a>
+            <a href="#">Nossa solução</a>
+            <a href="#">Orçamentos</a>
+        </div>
+        
+        <a href="#" class="logo" aria-label="Liven Green Logo">
+            <img src="https://i.imgur.com/TfO6W4U.png" alt="Liven Green logo" />
+        </a>
+        
+        <div class="menu-right">
+            <div class="search-container">
+                <input type="search" placeholder="Search" aria-label="Search" />
+                <button class="search-btn" aria-label="Buscar">&#128269;</button>
+            </div>
+            <button aria-label="User profile" style="font-size:18px;">&#128100;</button>
+            <button aria-label="Favorites" style="font-size:18px;">&#10084;</button>
+            <button aria-label="Shopping bag" style="font-size:18px;">&#128717;</button>
+            <button aria-label="Menu" style="font-size:24px;">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Link voltar -->
+    <a href="PaginaInicial.html" class="voltar">Voltar</a>
+
+    <!-- Conteúdo -->
+    <main class="container">
+        <!-- Sobre nós -->
+        <section class="sobre-nos">
+            <article class="content-text">
+                <h2>Sobre nós</h2>
+                <p>
+                    A Liven Green é especializada em soluções de jardins verticais inteligentes para melhorar os ambientes e deixa-los mais sustentaveis. Desenvolvemos jardins verticais com sistema para regar automaticamente e oferecemos um modelo de assinatura mensal, que inclui manutenção completa, garantindo a beleza e vitalidade do seu jardim vertical sem preocupações.
+                </p>
+            </article>
+            <article class="content-image">
+                <img src="https://i.imgur.com/CMdrIOh.jpg" alt="Jardim vertical com diversas plantas" />
+            </article>
+        </section>
+
+        <!-- Principais Públicos -->
+        <section class="publico-alvo">
+            <article class="content-image">
+                <img src="https://i.imgur.com/tiyHPvU.jpg" alt="Pessoa apontando em um grupo" />
+            </article>
+            <article class="content-text">
+                <h2>Principais Públicos</h2>
+                <p>
+                    Nosso foco está em atender clientes exigentes, como empresários, arquitetos e proprietários de imóveis de alto padrão, que buscam exclusividade, inovação e consciência ambiental em cada detalhe.<br />
+                    Mais que jardins, criamos experiências verdes que elevam o valor e o prestígio de cada ambiente.
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
