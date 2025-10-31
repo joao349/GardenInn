@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +28,8 @@
             border-bottom: 1px solid #ddd;
         }
 
-        nav .menu-left, nav .menu-right {
+        nav .menu-left,
+        nav .menu-right {
             display: flex;
             align-items: center;
             gap: 25px;
@@ -113,7 +115,8 @@
 
         /* Texto da esquerda / direita */
         .content-text h2 {
-            color: #2e7d32; /* Verde escuro */
+            color: #2e7d32;
+            /* Verde escuro */
             font-weight: 600;
             font-size: 1.5rem;
             margin-bottom: 14px;
@@ -139,14 +142,17 @@
             grid-column: 1 / 2;
             order: 1;
         }
+
         .sobre-nos .content-image {
             grid-column: 2 / 3;
             order: 2;
         }
+
         .publico-alvo .content-text {
             grid-column: 2 / 3;
             order: 2;
         }
+
         .publico-alvo .content-image {
             grid-column: 1 / 2;
             order: 1;
@@ -175,6 +181,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Nav -->
     <nav>
@@ -184,17 +191,22 @@
             <a href="#">Nossa solução</a>
             <a href="#">Orçamentos</a>
         </div>
-        
-        <a href="#" class="logo" aria-label="Liven Green Logo">
-            <img src="https://i.imgur.com/TfO6W4U.png" alt="Liven Green logo" />
+
+        <a href="" class="logo" aria-label="Liven Green Logo">
+            <img src="Logo preta.png" alt="Liven Green logo" />
         </a>
-        
+
         <div class="menu-right">
             <div class="search-container">
-                <input type="search" placeholder="Search" aria-label="Search" />
+                <input type="search" placeholder="Search" aria-label="Search"/>
                 <button class="search-btn" aria-label="Buscar">&#128269;</button>
             </div>
-            <button aria-label="User profile" style="font-size:18px;">&#128100;</button>
+            <button aria-label="User profile" style="font-size:18px;" id="Usuario">&#128100;</button>
+            <script>
+                document.getElementById("Usuario").addEventListener("click", () => {
+                    window.location.href = "PaginaLogin.html";
+                });
+            </script>
             <button aria-label="Favorites" style="font-size:18px;">&#10084;</button>
             <button aria-label="Shopping bag" style="font-size:18px;">&#128717;</button>
             <button aria-label="Menu" style="font-size:24px;">&#9776;</button>
@@ -211,7 +223,10 @@
             <article class="content-text">
                 <h2>Sobre nós</h2>
                 <p>
-                    A Liven Green é especializada em soluções de jardins verticais inteligentes para melhorar os ambientes e deixa-los mais sustentaveis. Desenvolvemos jardins verticais com sistema para regar automaticamente e oferecemos um modelo de assinatura mensal, que inclui manutenção completa, garantindo a beleza e vitalidade do seu jardim vertical sem preocupações.
+                    A Liven Green é especializada em soluções de jardins verticais inteligentes para melhorar os
+                    ambientes e deixa-los mais sustentaveis. Desenvolvemos jardins verticais com sistema para regar
+                    automaticamente e oferecemos um modelo de assinatura mensal, que inclui manutenção completa,
+                    garantindo a beleza e vitalidade do seu jardim vertical sem preocupações.
                 </p>
             </article>
             <article class="content-image">
@@ -227,11 +242,14 @@
             <article class="content-text">
                 <h2>Principais Públicos</h2>
                 <p>
-                    Nosso foco está em atender clientes exigentes, como empresários, arquitetos e proprietários de imóveis de alto padrão, que buscam exclusividade, inovação e consciência ambiental em cada detalhe.<br />
+                    Nosso foco está em atender clientes exigentes, como empresários, arquitetos e proprietários de
+                    imóveis de alto padrão, que buscam exclusividade, inovação e consciência ambiental em cada
+                    detalhe.<br />
                     Mais que jardins, criamos experiências verdes que elevam o valor e o prestígio de cada ambiente.
                 </p>
             </article>
         </section>
     </main>
 </body>
+
 </html>

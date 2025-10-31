@@ -9,15 +9,74 @@ body {
     min-height: 100vh;
 }
 
-.header {
+nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #000000;
-    color: #ffffff;
-    box-sizing: border-box;
+    padding: 10px 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav .menu-left,
+nav .menu-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav .menu-left a,
+nav .menu-right button,
+nav .menu-right input::placeholder {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav .logo {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Icons na direita */
+nav .menu-right {
+    gap: 15px;
+}
+
+nav .search-container {
+    position: relative;
+}
+
+nav input[type="search"] {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 6px 36px 6px 15px;
+    font-size: 14px;
+    outline: none;
+    width: 150px;
+}
+
+nav button.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
 }
 
 .header-left {
@@ -35,8 +94,10 @@ body {
 }
 
 .btn.btn-primary {
-    position: relative; /* ou absolute, dependendo do layout */
-    z-index: 1000; /* Para garantir que fique no topo */
+    position: relative;
+    /* ou absolute, dependendo do layout */
+    z-index: 1000;
+    /* Para garantir que fique no topo */
 }
 
 .header-right {
@@ -102,7 +163,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px; /* Aumentado o padding lateral de 20px para 40px para tornar o main content mais largo */
+    padding: 40px 40px;
+    /* Aumentado o padding lateral de 20px para 40px para tornar o main content mais largo */
 }
 
 .login-card {
@@ -112,19 +174,25 @@ body {
     border-radius: 8px;
     text-align: center;
     width: 100%;
-    max-width: 800px; /* Aumentado de 600px para 800px para tornar o cartão de login ainda mais largo */
+    max-width: 800px;
+    /* Aumentado de 600px para 800px para tornar o cartão de login ainda mais largo */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Para o logotipo no navbar */
 .logo img {
-    height: 50px;  /* Define a altura como 50 pixels */
-    width: auto;   /* Mantém a proporção da largura */
-    vertical-align: middle; /* Alinha verticalmente se necessário */
+    height: 50px;
+    /* Define a altura como 50 pixels */
+    width: auto;
+    /* Mantém a proporção da largura */
+    vertical-align: middle;
+    /* Alinha verticalmente se necessário */
 }
+
 /* Para o logotipo no cartão de login - AUMENTADO PARA NÃO SER PEQUENO */
 .login-card .logo img {
-    height: 60px;  /* Aumentado de 10px para 60px para torná-la visível e proporcional */
+    height: 60px;
+    /* Aumentado de 10px para 60px para torná-la visível e proporcional */
     width: auto;
 }
 
@@ -149,7 +217,8 @@ body {
     border: 1px solid #333333;
     border-radius: 4px;
     background-color: #333333;
-    color: #ffffff;  /* Corrigido para branco para visibilidade em fundo escuro */
+    color: #ffffff;
+    /* Corrigido para branco para visibilidade em fundo escuro */
     font-size: 16px;
     outline: none;
 }
@@ -183,79 +252,3 @@ body {
 .signup-link a:hover {
     text-decoration: underline;
 }
-
-    /* Navbar */
-      .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      height: 60px;
-      width: 100%;
-      background-color: #eee;
-      box-sizing:border-box;
-    }
-
-    .navbar-left {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-
-    .navbar-right input[type="text"] {
-      padding: 5px 10px;
-      font-size: 1em;
-    }
-    
-    .navbar-right{
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-
-    .logo {
-      margin-right: 20px;
-      font-weight: bold;
-      font-size: 1.5em;
-      height: 75%;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    /* Logo */
-    .nav-links li {
-      margin-right: 15px;
-    }
-
-    .nav-links li a {
-      text-decoration: none;
-      color: #333;
-    }
-    /* Search and icons container */
-
-    .search-icons{
-      display: flex;
-    }
-
-    .search-icons input[type="search"]:focus {
-      width: 200px;
-      border-color: #4CAF50;
-    }
-
-    /* Hamburger menu - mock */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #333;
-    }
