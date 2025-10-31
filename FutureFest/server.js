@@ -25,19 +25,46 @@ app.get('/Login',(req,res)=>{
     res.sendFile(__dirname + '/PaginaLogin.html');
 })
 
-app.get('/Sobre Nós',(req,res)=>{
-    res.sendFile(__diraname + '/SobreNos.html')
-})
+app.post('/Login', async(req,res)=>{
+    const cliente = new MongoClient(url);
 
-app.get('/Orçamentos',(req,res)=>{
-    res.sendFile(__diraname + '/Orçamentos.html')
-})
+    try{
+        await cliente.connect();
+        const db = cliente.db(dbName);
+        const collection = db.collection(collectionName);
 
-app.get('/Nossa solução',(req,res)=>{
-    res.sendFile(__diraname + '/NossaSolução.html')
-})
+        const usuario = await collection.findOne({email: req.body.email});
+        if(usuario && await bcrypt.compare(req.body.senha, usuario.senha)){
+            req.session.usuario = req.body.usuario;
+            res.redirect('/PaginaLogada.html');
+        }
+        else{
+            res.status(401).send('Email ou senha inválidos');
+        }
+    }
+    catch(err){
+        console.error('Erro ao fazer login:', err);
+        res.status(500).send('Erro ao fazer login');
+    }
+    finally{
+        cliente.close();
+    }
+});
 
-app.post('/Login', async (res,req)=>{
+function protegerRota(req,res,proximo){
+    if(req.session.usuario){
+        proximo();
+    }else{
+        res.redirect('/Login');
+    }
+}
+
+app.get('/PaginaLogada.html',protegerRota,(req,res)=>{
+    res.sendFile(__dirname + '/PaginaLogada.html');
+});
+
+ 
+app.post('/InserirUsuario', async (res,req)=>{
     const novoUsuario = req.body;
 
     const client = new MongoClient(url);
@@ -47,10 +74,19 @@ app.post('/Login', async (res,req)=>{
         const db = client.db(dbName);
         const collection = db.collection(collectionName);
 
-        const reult = await collection.insertOne(novoUsuario);
-        console.log('Usuário inserido com sucesso:', result.insertedId);
+        const usuarioExistente = await collection.findOne({email: novoUsuario.email});
 
-        res.redirect('/');
+        if(usuarioExistente){
+            return res.status(400).send('Usuário com este email já existe');
+        }
+        else{
+            const senhaCriptografada = await bcrypt.hash(novoUsuario.senha,10);
+
+            await collection.insertOne({
+                usuario: req.body.usuario,
+                senha: senhaCriptografada,
+            });
+        }
     }
     catch(err){
         console.error('Erro ao inserir usuário:', err);
@@ -60,10 +96,6 @@ app.post('/Login', async (res,req)=>{
         client.close();
     }
 });
-
-
-
-
 
 app.listen(port, () => {
  console.log(`Servidor Node.js em execução em http://localhost:${port}`);
