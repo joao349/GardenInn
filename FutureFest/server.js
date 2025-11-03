@@ -1,5 +1,13 @@
 // npm install mongodb
 //npm install method-override
+/*
+    _id: 1,
+    PrimeironNome: "Teste1",
+    SegundoNome: "Robo2",
+    Telefone: "(55) 11 0000-97486",
+    Senha: "15869",
+*/
+
 
 const express = require('express');
 const {MongoClient,ObjectID} = require('mongodb');
@@ -15,7 +23,7 @@ app.use(methodOverride('_method'));
 //configuração URL de conexão com o MongoDB
 const url = 'mongodb://localhost:27017/';
 const dbName = 'futurefest';
-const collectionName ='events'
+const collectionName ='resgistrousuarios'
 
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/PaginaInicial.html');
@@ -23,6 +31,7 @@ app.get('/',(req,res)=>{
 
 app.get('/Login',(req,res)=>{
     res.sendFile(__dirname + '/PaginaLogin.html');
+    console.log('pagina de login acessada')
 })
 
 app.post('/Login', async(req,res)=>{
@@ -64,11 +73,11 @@ app.get('/PaginaLogada.html',protegerRota,(req,res)=>{
 });
 
  
-app.post('/InserirUsuario', async (res,req)=>{
+app.post('/InserirUsuario', async (req,res)=>{
     const novoUsuario = req.body;
 
     const client = new MongoClient(url);
-
+    console.log(req.body)
     try{
         await client.connect();
         const db = client.db(dbName);
