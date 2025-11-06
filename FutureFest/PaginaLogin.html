@@ -303,65 +303,21 @@
                 <!-- Replace with actual logo SVG/image -->
             </div>
             <h2>Faça o log-in para continuar</h2>
+
             <form action="/Login" method="post" class="login-form">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Senha" required>
+                <input name="email" type="email" placeholder="Email" required>
+
+                <input name="senha" type="password" placeholder="Senha" required>
+
                 <button type="submit" class="login-btn">Log in</button>
             </form>
-            <p class="signup-link">Não possui uma conta? <a href="#" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Sign up</a></p> <!-- Alterado aqui -->
+
+            <p class="signup-link">Não possui uma conta? <a href="#" onclick="AdiconarNovoElemento()">Sign up</a></p>
         </div>
     </main>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crie sua conta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="/InserirUsuario" method="post" id="signupForm">
-                        <div class="mb-3">
-                            <label for="firstName" class="form-label">Primeiro nome</label>
-                            <input type="text" class="form-control" id="firstName"
-                                placeholder="Digite seu primeiro nome" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="lastName" class="form-label">Segundo nome</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Digite seu segundo nome"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" id="phone" placeholder="Digite seu telefone"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" placeholder="Digite uma senha"
-                                required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="confirmPassword" class="form-label">Confirme a senha</label>
-                            <input type="password" class="form-control" id="confirmPassword"
-                                placeholder="Confirme sua senha" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="submit" form="signupForm" class="btn btn-primary">Criar conta</button>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- Script para validação básica -->
     <script>
@@ -380,6 +336,90 @@
             myModal.hide();
         });
     </script>
+
+    
+
+  
+
+<script>
+
+function AdiconarNovoElemento(){
+    const ModalHtml = `
+<div class="modal fade" id="Adicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/InserirUsuario" method="POST"> 
+          <div class="modal-body">
+          
+    
+          
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Primeiro nome</span>
+                <input name="PrimeiroNome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Segundo nome</span>
+                <input name="SegundoNome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+                <input name="email" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
+                <input name="telefone" type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+                <input id="password" name="senha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Confirmar Senha</span>
+
+                <input id="confirmPassword" name="ConfirmarSenha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+          
+
+        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                <button type="submit"  class="btn btn-primary">Inserir Dados</button>
+            </div>
+
+      </form>
+      
+    </div>
+  </div>
+</div>`
+
+document.body.insertAdjacentHTML('afterbegin',ModalHtml)
+
+        const modalElement = document.getElementById('Adicionar');
+      const modalBootstrap = new bootstrap.Modal(modalElement, {
+        backdrop: 'static',
+        keyboard: true
+      });
+
+      modalBootstrap.show();
+
+      modalElement.addEventListener('hidden.bs.modal', () => {
+        modalElement.remove();
+      });
+
+      }
+
+</script>
 </body>
 
 </html>
