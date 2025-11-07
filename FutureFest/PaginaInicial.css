@@ -1,0 +1,34 @@
+.LogoNav{
+    width:55px;
+    height:55px;
+}
+.metade{
+    width:50%;
+    
+}
+.metade{
+    display: flex;
+    justify-content: right;
+}
+    .LogoLogin{
+        width:20px;
+        margimargin-right: 10px;
+    }
+    
+.BanneInicialConter{
+    width: 100%;
+    height:530px;
+    background-color: black; 
+    display: flex; 
+    justify-content: center;
+}
+    .imagemContida{
+        width:75% ;
+        height: 100%;
+        background-image: url(ImagemFundo.png);
+    }
+        .ImagemDegrade{
+            width:100% ;
+            height: 100%;
+            background-image: url(retangulo_degrade.png);
+        }
