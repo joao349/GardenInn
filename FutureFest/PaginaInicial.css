@@ -1,3 +1,20 @@
+// <weight>: Use a value from 400 to 900
+// <uniquifier>: Use a unique and descriptive class name
+
+.playfair-display-uniquifier {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+body{
+    font-family:"Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
 .LogoNav{
     width:55px;
     height:55px;
@@ -32,3 +49,17 @@
             height: 100%;
             background-image: url(retangulo_degrade.png);
         }
+            .CentralizarTudo{
+                width: 100%;
+                display: flex;
+                justify-content:center; 
+                height: 33%;
+            }
+
+            .BotaoInicial{
+                border-radius: 20px;
+                border: none;
+                background-color: #00FF26;
+                height: 45px;
+                width: 135px;
+            }
