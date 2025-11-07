@@ -13,6 +13,8 @@ body{
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
+
+    background-color:rgb(0, 0, 0);
 }
 
 .LogoNav{
@@ -63,3 +65,13 @@ body{
                 height: 45px;
                 width: 135px;
             }
+
+
+
+.CarrosselPai{
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    background-color:rgb(0, 0, 0);
+    margin-top:100px;
+}
