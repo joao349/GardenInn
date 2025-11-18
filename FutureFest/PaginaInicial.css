@@ -50,20 +50,26 @@ body{
             height: 100%;
             background-image: url(retangulo_degrade.png);
         }
-            .CentralizarTudo{
-                width: 100%;
-                display: flex;
-                justify-content:center; 
-                height: 33%;
-            }
+        .abaixar{
+            margin-top: 50px;
+        }
+        .LogoPagina{
+            height: 200px;
+        }
+                .CentralizarTudo{
+                    width: 100%;
+                    display: flex;
+                    justify-content:center; 
+                    height: 33%;
+                }
 
-            .BotaoInicial{
-                border-radius: 20px;
-                border: none;
-                background-color: #00FF26;
-                height: 45px;
-                width: 135px;
-            }
+                .BotaoInicial{
+                    border-radius: 20px;
+                    border: none;
+                    background-color: #00FF26;
+                    height: 45px;
+                    width: 135px;
+                }
 
 
 
