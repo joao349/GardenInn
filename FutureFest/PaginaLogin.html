@@ -13,34 +13,35 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Header Navigation -->
-    <nav>
-        <div class="menu-left">
-            <a href="SobreNos.html">quem nós somos</a>
-            <a href="#">Nossa missão</a>
-            <a href="#">Nossa solução</a>
-            <a href="#">Orçamentos</a>
-        </div>
-
-        <a href="" class="logo" aria-label="Liven Green Logo">
-            <img src="Logo preta.png" alt="Liven Green logo" />
-        </a>
-
-        <div class="menu-right">
-            <div class="search-container">
-                <input type="search" placeholder="Search" aria-label="Search" />
-                <button class="search-btn" aria-label="Buscar">&#128269;</button>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary w-100"">
+        <div class="container-fluid">
+            <img class="LogoNav" src="Logo preta.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Quem nós somos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Nossa missão</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Nossa solução</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Orçamentos</a>
+                </li>
+            </ul>
             </div>
-            <button aria-label="User profile" style="font-size:18px;" id="Usuario">&#128100;</button>
-            <script>
-                document.getElementById("Usuario").addEventListener("click", () => {
-                    window.location.href = "PaginaLogin.html";
-                });
-            </script>
-            <button aria-label="Favorites" style="font-size:18px;">&#10084;</button>
-            <button aria-label="Shopping bag" style="font-size:18px;">&#128717;</button>
-            <button aria-label="Menu" style="font-size:24px;">&#9776;</button>
+            <div class="metade">
+            <a href="PaginaLogin.html">
+                <img class="LogoLogin" style="margin-right: 30px;" src="IconeLogin.png" >
+            </a>
+            </div>
         </div>
-    </nav>
+        </nav>
 
     <!-- Main Content with Login Form -->
     <main class="main-content">
@@ -59,7 +60,7 @@
                 <button type="submit" class="login-btn">Log in</button>
             </form>
 
-            <p class="signup-link">Não possui uma conta? <a onclick="AdiconarNovoElemento()">Sign up</a></p>
+            <p class="signup-link">Não possui uma conta? <a onclick="AdiconarNovoElemento()" class="signup-link-green">Sign up</a></p>
         </div>
     </main>
 
