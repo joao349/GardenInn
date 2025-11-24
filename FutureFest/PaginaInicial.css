@@ -35,13 +35,13 @@ body{
     
 .BanneInicialConter{
     width: 100%;
-    height:530px;
+    height : 750px;
     background-color: black; 
     display: flex; 
     justify-content: center;
 }
     .imagemContida{
-        width:75% ;
+        width:100% ;
         height: 100%;
         background-image: url(ImagemFundo.png);
     }
@@ -50,19 +50,25 @@ body{
             height: 100%;
             background-image: url(retangulo_degrade.png);
         }
+            .ContainerPaginaInicial{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    margin: 0px 100px;
+            }
         .abaixar{
             margin-top: 50px;
         }
         .LogoPagina{
             height: 200px;
         }
-                .CentralizarTudo{
-                    width: 100%;
-                    display: flex;
-                    justify-content:center; 
-                    height: 33%;
-                }
-
+            .CentralizarTudo{
+                width: 100%;
+                display: flex;
+                justify-content:center; 
+                height: 33%;
+            }
+            
                 .BotaoInicial{
                     border-radius: 20px;
                     border: none;
@@ -77,4 +83,8 @@ body{
     width: 100%;
     display:flex;
     justify-content:center;
+}
+
+.card{
+    width:400px;
 }
