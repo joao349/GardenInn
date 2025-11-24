@@ -128,7 +128,7 @@ body {
   padding: 40px;
   border-radius: 8px;
   text-align: center;
-  width: 100%;
+  width: 450px;
   max-width: 800px;
   /* Aumentado de 600px para 800px para tornar o cartão de login ainda mais largo */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -136,7 +136,7 @@ body {
 
 /* Para o logotipo no cartão de login - AUMENTADO PARA NÃO SER PEQUENO */
 .login-card .logo img {
-  height: 60px;
+  height: 100px;
   /* Aumentado de 10px para 60px para torná-la visível e proporcional */
   width: auto;
 }

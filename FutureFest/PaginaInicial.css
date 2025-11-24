@@ -137,10 +137,6 @@ body{
     opacity: 1; /* Torna o texto visível */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .btn-topo {
   position: fixed;
   bottom: 20px;
@@ -160,5 +156,5 @@ html {
 }
 
 #btn-topo:hover {
-  background-color: #0056b3;
+  background-color: #00b351;
 }

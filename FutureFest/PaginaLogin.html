@@ -15,31 +15,10 @@
     <!-- Header Navigation -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary w-100">
         <div class="container-fluid">
-            <img class="LogoNav" src="Logo preta.png" alt="">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="#">Quem nós somos</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Nossa missão</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Nossa solução</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">Orçamentos</a>
-                </li>
-            </ul>
-            </div>
-            <div class="metade">
-            <a href="PaginaLogin.html">
-                <img class="LogoLogin" style="margin-right: 25px;" src="IconeLogin.png" >
+            <a href="PaginaInicial.html">
+                <img class="LogoNav" src="Logo preta.png" alt="">
             </a>
-            </div>
+            
         </div>
         </nav>
 
@@ -85,89 +64,84 @@
         });
     </script>
 
-    
-
-  
-
 <script>
 
-function AdiconarNovoElemento(){
-    const ModalHtml = `
-<div class="modal fade" id="Adicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Adicionar usuario</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <form action="/InserirUsuario" method="POST"> 
-          <div class="modal-body">
-          
-    
-          
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Primeiro nome</span>
-                <input name="PrimeiroNome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Segundo nome</span>
-                <input name="SegundoNome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
-                <input name="email" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-        
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
-                <input name="telefone" type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
-                <input id="password" name="senha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Confirmar Senha</span>
-
-                <input id="confirmPassword" name="ConfirmarSenha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-          
-
+    function AdiconarNovoElemento(){
+        const ModalHtml = `
+    <div class="modal fade" id="Adicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar usuario</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <form action="/InserirUsuario" method="POST"> 
+            <div class="modal-body">
+            
+        
+            
 
-                <button type="submit"  class="btn btn-primary">Inserir Dados</button>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Primeiro nome</span>
+                    <input name="PrimeiroNome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Segundo nome</span>
+                    <input name="SegundoNome" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+                    <input name="email" type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Telefone</span>
+                    <input name="telefone" type="tel" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+                    <input id="password" name="senha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Confirmar Senha</span>
+
+                    <input id="confirmPassword" name="ConfirmarSenha" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            
+
             </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-      </form>
-      
+                    <button type="submit"  class="btn btn-primary">Inserir Dados</button>
+                </div>
+
+        </form>
+        
+        </div>
     </div>
-  </div>
-</div>`
+    </div>`
 
-document.body.insertAdjacentHTML('afterbegin',ModalHtml)
+    document.body.insertAdjacentHTML('afterbegin',ModalHtml)
 
-        const modalElement = document.getElementById('Adicionar');
-      const modalBootstrap = new bootstrap.Modal(modalElement, {
-        backdrop: 'static',
-        keyboard: true
-      });
+            const modalElement = document.getElementById('Adicionar');
+        const modalBootstrap = new bootstrap.Modal(modalElement, {
+            backdrop: 'static',
+            keyboard: true
+        });
 
-      modalBootstrap.show();
+        modalBootstrap.show();
 
-      modalElement.addEventListener('hidden.bs.modal', () => {
-        modalElement.remove();
-      });
+        modalElement.addEventListener('hidden.bs.modal', () => {
+            modalElement.remove();
+        });
 
-      }
+        }
 
-</script>
+    </script>
 </body>
-
 </html>
