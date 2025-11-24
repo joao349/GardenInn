@@ -215,26 +215,33 @@
         <p>Preencha os campos abaixo e receba um orçamento personalizado
         para o seu jardim vertical:</p>
       </div>
+
       <div class="CentralizarTudo">
         <label for="tipo-ambiente">Tipo de ambiente</label>
       </div>  
       <input type="text" id="tipo-ambiente" name="tipo-ambiente" placeholder="Residência /Comercial/ Outro" required>
       
-      <label for="dimensoes">Dimensões aproximadas da parede (em metros)</label>
+      <div class="CentralizarTudo">
+        <label for="dimensoes">Dimensões aproximadas da parede (em metros)</label>
+      </div>
       <input type="text" id="dimensoes" name="dimensoes" placeholder="Altura X largura" required>
-
-      <label for="local">Local de instalação</label>
+      <div class="CentralizarTudo">
+        <label for="local">Local de instalação</label>
+      </div>
       <input type="text" id="local" name="local" placeholder="Área interna / Área externa" required>
-
-      <label>Tipo de jardim desejado</label>
+      <div class="CentralizarTudo">
+        <label>Tipo de jardim desejado</label>
+      </div>
       <div class="checkbox-group">
         <label><input type="checkbox" name="jardim" value="Irrigação automática"> Irrigação automática</label>
         <label><input type="checkbox" name="jardim" value="Irrigação manual"> Irrigação manual</label>
       </div>
-
+      <p></p>
       <textarea name="descricao" rows="3" placeholder="Descreva sua ideia ou necessidade (opcional)"></textarea>
+      <div class="CentralizarTudo">
       <button type="submit" class="botao">Enviar formulário</button>
-
+      </div>
+      <p></p>
     </form>
   </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
