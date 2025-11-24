@@ -189,11 +189,12 @@ body {
 }
 
 .signup-link {
+  font-size: 18px;
   margin-top: 20px;
-  font-size: 14px;
 }
 
 .signup-link a {
+  font-size: 18px;
   color: #00ff26;
   text-decoration: none;
 }
