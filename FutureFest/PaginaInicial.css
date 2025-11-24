@@ -136,3 +136,29 @@ body{
 .imagem-container:hover .texto {
     opacity: 1; /* Torna o texto visível */
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-topo {
+  position: fixed;
+  bottom: 20px;
+  z-index: 10000;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000000;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#btn-topo:hover {
+  background-color: #0056b3;
+}
