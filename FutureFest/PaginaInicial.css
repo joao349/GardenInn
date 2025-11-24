@@ -65,7 +65,7 @@ body{
                 width: 100%;
                 display: flex;
                 justify-content:center; 
-                height:33%;
+                
             }
 
             .CentralizarContainer{
@@ -83,8 +83,6 @@ body{
                     width: 135px;
                 }
 
-
-
 .CarrosselPai{
     width: 100%;
     display:flex;
@@ -99,6 +97,42 @@ body{
     gap:30px;
 }
 
+
+.Nossa-missao{
+    gap:30px;
+}
+
+.Textos-nossa-missao{
+     width:550px;
+}
 .Textos-sobre-nós{
     width:550px;
+}
+
+.imagem-container{
+    position: relative;
+    width: 600px; /* Largura da imagem */
+    height: 750px; /* Altura da imagem */
+}
+
+.imagem{
+    width: 100px;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o container */
+}
+
+.texto{
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para que o texto fique no centro exato */
+    color: white; /* Cor do texto */       
+    font-size: 20px; /* Tamanho do texto */
+    font-weight: bold;
+    opacity: 0; /* Deixa o texto invisível inicialmente */
+    transition: opacity 0.3s ease; /* Transição suave para o efeito */ 
+}
+
+.imagem-container:hover .texto {
+    opacity: 1; /* Torna o texto visível */
 }
