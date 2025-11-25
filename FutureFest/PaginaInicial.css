@@ -1,6 +1,11 @@
 /* <weight>: Use a value from 400 to 900
 // <uniquifier>: Use a unique and descriptive class name*/
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
 .playfair-display-uniquifier {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -36,8 +41,8 @@ body{
 .BanneInicialConter{
     width: 100%;
     height : 750px;
-    background-color: black; 
-    display: flex; 
+    background-color: black;
+    display: flex;
     justify-content: center;
 }
     .imagemContida{
