@@ -77,11 +77,41 @@
 </div>
 
 <script>
-  function exibirAlert(event) {
-    event.preventDefault(); // Impede o envio real do formulário
-    alert("Formulário enviado com sucesso! Entraremos em contato em breve.");
-  }
+document.getElementById("orcamentoForm").addEventListener("submit", async function(event){
+    event.preventDefault();
+
+    // Pega os valores do formulário
+    const tipoAmbiente = document.getElementById("tipo-ambiente").value;
+    const dimensoes = document.getElementById("dimensoes").value;
+    const local = document.getElementById("local").value;
+    
+    // Para checkbox, pega os selecionados
+    const jardim = Array.from(document.querySelectorAll("input[name='jardim']:checked"))
+                        .map(e => e.value);
+    
+    const descricao = document.querySelector("textarea[name='descricao']").value;
+
+    const dados = { tipoAmbiente, dimensoes, local, jardim, descricao };
+
+    try {
+        const res = await fetch("/orcamento", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dados)
+        });
+
+        const resposta = await res.json();
+        alert(resposta.msg);
+
+        if(resposta.ok){
+            document.getElementById("orcamentoForm").reset();
+        }
+    } catch (err) {
+        alert("Erro ao enviar o formulário: " + err);
+    }
+});
 </script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

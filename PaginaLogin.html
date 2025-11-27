@@ -143,13 +143,11 @@ function AdiconarNovoElemento() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dados)
             })
-            .then(res => res.json())
-            .then(resposta => {
-                alert(resposta.msg);
-
+            .then(async (res) => {
+                const resposta = await res.json(); // <-- aqui usamos const
+                alert(resposta.msg); // só mostra a mensagem do servidor
                 if (resposta.ok) {
                     modalBootstrap.hide();
-                    window.location.href = "PaginaInicial.html"; // redireciona após registro
                 }
             })
             .catch(err => alert("Erro ao registrar: " + err));

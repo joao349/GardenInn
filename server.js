@@ -111,6 +111,32 @@ app.post("/login", async (req, res) => {
     }
 });
 
+// Rota para receber o formulário de orçamento
+
+app.post("/orcamento", async (req, res) => {
+    try {
+        await client.connect();
+        const db = client.db(nomeBanco); // mesmo banco que você usa
+        const orcamentos = db.collection("orcamentos"); // coleção nova para os orçamentos
+
+        const { tipoAmbiente, dimensoes, local, jardim, descricao } = req.body;
+
+        // Inserir dados no banco
+        await orcamentos.insertOne({
+            tipoAmbiente,
+            dimensoes,
+            local,
+            jardim,
+            descricao,
+            data: new Date()
+        });
+
+        return res.json({ ok: true, msg: "Dados enviados com sucesso! Em breve entraremos em contato para fornecer o seu orçamento." });
+    } catch (err) {
+        console.error("Erro ao enviar orçamento:", err);
+        res.json({ ok: false, msg: "Erro interno no servidor." });
+    }
+});
 
 // ----------------------------------------------------
 // ✔ Iniciar servidor
