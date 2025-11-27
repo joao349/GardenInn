@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen AI Chatbot</title>
+    <title>Inteligencia artificial</title>
     <style>
+    body{
+        font-family:"Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
+        background-color:rgb(0, 0, 0);
+    }
+
+    .CentralizarTudo{
+        width: 100%;
+        display: flex;
+        justify-content:center;             
+    }
+
+    .LogoNav {
+        width: 55px;
+        height: 55px;
+    }
+
+    .metade {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end; /* corrigido de "right" para flex-end */
+    }
+
+    .LogoLogin {
+        width: 20px;
+        margin-right: 10px;
+    }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,19 +52,21 @@
             left: 0;
             right: 0;
             display: flex;
-            background: #007bff;
+            background-color: rgb(0, 0, 0);
             color: white;
             padding: 10px;
-            z-index: 10;
+            z-index: 0;
         }
         .tab {
+            background-color: #00481f;
+            margin-left: 50px;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px 5px 0 0;
             margin-right: 5px;
         }
         .tab.active {
-            background: #0056b3;
+            background: green;
         }
         .chat-area {
             position: fixed;
@@ -64,7 +95,7 @@
             max-width: 70%;
         }
         .user-message {
-            background: #007bff;
+            background: green;
             color: white;
             align-self: flex-end;
             margin-left: auto;
@@ -99,7 +130,7 @@
         }
         .chat-input button {
             padding: 10px 20px;
-            background: #007bff;
+            background: #28a745;
             color: white;
             border: none;
             border-radius: 5px;
@@ -107,7 +138,7 @@
             cursor: pointer;
         }
         .chat-input button:hover {
-            background: #0056b3;
+            background: #00481f;
         }
         .add-tab {
             padding: 10px 20px;
@@ -119,21 +150,28 @@
             margin-left: auto;
         }
         .add-tab:hover {
-            background: #218838;
+            background: #00481f;
         }
     </style>
 </head>
 <body>
+    <a href="paginaformulario.html">
+        <img src="arrow_back.png" alt="Voltar" style="width:30px; height:30px; position:fixed; top:15px; left:20px; cursor:pointer; z-index:100;">
+    </a>
     <div class="chat-container">
         <div class="tabs">
-            <button class="add-tab" onclick="addChat()">+ New Chat</button>
+            <div class="tabs-left">
+            </div>
+            <div class="tabs-right">
+                <button class="add-tab" onclick="addChat()">+ New Chat</button>
+            </div>
         </div>
         <div class="chat-area">
             <div class="chat-messages" id="chat-messages">
                 <div class="message bot-message">Olá, como posso te ajudar?</div>
             </div>
             <div class="chat-input">
-                <input type="text" id="user-input" placeholder="Type your message...">
+                <input type="text" id="user-input" placeholder="Digite sua mensagem">
                 <button onclick="sendMessage()">Send</button>
             </div>
         </div>
@@ -306,4 +344,5 @@
         window.switchChat = switchChat;
     </script>
 </body>
+
 </html>

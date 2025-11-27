@@ -7,8 +7,8 @@ body{
 }
 
 .CentralizarTudo{
-        width: 100%;
-        display: flex;
+    width: 100%;
+    display: flex;
     justify-content:center;             
 }
 
@@ -28,17 +28,30 @@ body{
     margin-right: 10px;
 }
 
-
-
-
 form {
     background-color: #000;
     color: #fff;
     padding: 25px;
     border-radius: 15px;
     width: 900px;
-    height: 600px;
+    height: 550px;
     margin-top: 20px;
+}
+
+
+.signup-link-green:hover {
+  cursor: pointer;
+}
+
+.signup-link {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.signup-link a {
+  font-size: 18px;
+  color: #00ff26;
+  text-decoration: none;
 }
 
 form p {
