@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+</head>
+<body style="font-family: playfair-display-uniquifier;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a href="PaginaInicial.html">
+      <img class="LogoNav" src="Logo preta.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+
+    <div class="metade">
+      <a href="PaginaLogin.html">
+        <img class="LogoLogin" style="margin-right: 10px;" src="IconeLogin.png" alt="">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="CentralizarTudo" id="orcamentos">
+  <h2>Solicite seu orçamento personalizado</h2>
+</div>
+
+<div class="CentralizarTudo">
+  <p class="intro">Preencha o formulário abaixo com as informações do seu ambiente e suas preferências. 
+    Nossa equipe especializada entrará em
+    contato rapidamente com uma proposta personalizada, pensada especialmente para você.</p>
+</div>
+
+<div class="CentralizarTudo">
+  <form id="orcamentoForm" onsubmit="exibirAlert(event)">
+    <div class="CentralizarTudo">
+      <p style="font-size: 20px;">Preencha os campos abaixo e receba um orçamento personalizado
+      para o seu jardim vertical:</p>
+    </div>
+
+    <div class="CentralizarTudo">
+      <label for="tipo-ambiente">Tipo de ambiente</label>
+    </div>  
+    <input type="text" id="tipo-ambiente" name="tipo-ambiente" placeholder="Residência /Comercial/ Outro" required>
+    
+    <div class="CentralizarTudo">
+      <label for="dimensoes">Dimensões aproximadas da parede (em metros)</label>
+    </div>
+    <input type="text" id="dimensoes" name="dimensoes" placeholder="Altura X largura" required>
+
+    <div class="CentralizarTudo">
+      <label for="local">Local de instalação</label>
+    </div>
+    <input type="text" id="local" name="local" placeholder="Área interna / Área externa" required>
+
+    <div class="CentralizarTudo">
+      <label>Tipo de jardim desejado</label>
+    </div>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="jardim" value="Irrigação automática"> Irrigação automática</label>
+      <label><input type="checkbox" name="jardim" value="Irrigação manual"> Irrigação manual</label>
+    </div>
+
+    <p></p>
+    <textarea name="descricao" rows="3" placeholder="Descreva sua ideia ou necessidade (opcional)"></textarea>
+
+    <div class="CentralizarTudo">
+      <button type="submit" class="botao">Enviar formulário</button>
+    </div>
+    <p></p>
+  </form>
+</div>
+
+<script>
+  function exibirAlert(event) {
+    event.preventDefault(); // Impede o envio real do formulário
+    alert("Formulário enviado com sucesso! Entraremos em contato em breve.");
+  }
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

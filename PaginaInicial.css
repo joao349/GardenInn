@@ -1,0 +1,169 @@
+/* <weight>: Use a value from 400 to 900
+// <uniquifier>: Use a unique and descriptive class name*/
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+.playfair-display-uniquifier {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+body{
+    font-family:"Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    background-color:rgb(0, 0, 0);
+}
+
+.LogoNav{
+    width:55px;
+    height:55px;
+}
+.metade{
+    width:50%;
+}
+.metade{
+    display: flex;
+    justify-content: right;
+}
+    .LogoLogin{
+        width:20px;
+        margin-right: 10px;
+    }
+    
+.BanneInicialConter{
+    width: 100%;
+    height : 750px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+    .imagemContida{
+        width:100% ;
+        height: 100%;
+        background-image: url(ImagemFundo.png);
+    }
+        .ImagemDegrade{
+            width:100% ;
+            height: 100%;
+            background-image: url(retangulo_degrade.png);
+        }
+            .ContainerPaginaInicial{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0px 100px;
+            }
+        .abaixar{
+            margin-top: 50px;
+        }
+        .LogoPagina{
+            height: 200px;
+        }
+            .CentralizarTudo{
+                width: 100%;
+                display: flex;
+                justify-content:center; 
+                
+            }
+
+            .CentralizarContainer{
+                width: 100%;
+                height:10%;
+                display: flex;
+                justify-content:center;
+            }
+            
+                .BotaoInicial{
+                    border-radius: 20px;
+                    border: none;
+                    background-color: #00FF26;
+                    height: 45px;
+                    width: 135px;
+                }
+
+.CarrosselPai{
+    width: 100%;
+    display:flex;
+    justify-content:center;
+}
+
+.card{
+    width:400px;
+}
+
+.sobre-nos{
+    gap:30px;
+}
+
+
+.Nossa-missao{
+    gap:30px;
+}
+
+.Textos-nossa-missao{
+     width:550px;
+}
+.Textos-sobre-nós{
+    width:550px;
+}
+
+.imagem-container{
+    position: relative;
+    width: 600px; /* Largura da imagem */
+    height: 750px; /* Altura da imagem */
+}
+
+.imagem{
+    width: 100px;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o container */
+}
+
+.texto{
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para que o texto fique no centro exato */
+    color: white; /* Cor do texto */       
+    font-size: 20px; /* Tamanho do texto */
+    font-weight: bold;
+    opacity: 0; /* Deixa o texto invisível inicialmente */
+    transition: opacity 0.3s ease; /* Transição suave para o efeito */ 
+}
+
+.imagem-container:hover .texto {
+    opacity: 1; /* Torna o texto visível */
+}
+
+.btn-topo {
+  position: fixed;
+  bottom: 20px;
+  z-index: 10000;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000000;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#btn-topo:hover {
+  background-color: #00b351;
+}
+
+.intro{
+    font-size: 18px;
+    text-align: center;
+}
