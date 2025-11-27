@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoClient = require('mongodb').mongoClient;
+const { MongoClient } = require('mongodb');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 
@@ -11,17 +11,17 @@ app.use(express.json());
 app.use(session({
     secret: 'Comi9Tijolos',
     resave: false,
-    saveUnintialized : true,
+    saveUninitialized: true,
 }));
 
-const urlMongo = 'mongodb://127.0.0.1:27017';
+const urlMongo = "mongodb+srv://j83371339_db_user:<CP6D743.svTFgYQ>@cluster0.ykf508g.mongodb.net/?appName=Cluster0";
 const nomeBanco = 'sistemaLogin';
 
-app.get('registro', (req,res) => {
+app.get('/registro', (req,res) => {
     res.sendFile(__dirname + '/views/registro.html');
 });
 
-app.post('/registro', async (res,req)=>{
+app.post('/registro', async (req,res)=>{
     
 });
 
