@@ -28,10 +28,7 @@ body{
     margin-right: 10px;
 }
 
-/* Ajuste para fixed-top */
-body {
-    padding-top: 70px; /* altura da navbar fixa */
-}
+
 
 
 form {
